@@ -2,5 +2,5 @@
 
 <!-- @section("content") -->
 
-<h3>Last Visited page : -  {{URL::previous()}}</h3>
+<!-- <h3>Last Visited page : -  {{URL::previous()}}</h3> -->
 <!-- @endsection -->
