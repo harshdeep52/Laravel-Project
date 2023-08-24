@@ -11,6 +11,8 @@ class UserController extends Controller
         return view("users",['username'=>$user]);
     }
 
+
+    
     function showPage(){
         return view("users");
     }
