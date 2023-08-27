@@ -27,6 +27,9 @@
       <li class="nav-item">
         <a class="nav-link" href="{{URL::to('/blogs')}}">Blogs</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{URL::to('/signup')}}">Signup</a>
+      </li>
     </ul>
   </div>
 </nav>
