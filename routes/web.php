@@ -1,17 +1,31 @@
 <?php
 
+use App\Http\Controllers\AggregatesExampleController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\UserController;
 
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\DeleteOperationController;
 use App\Http\Controllers\FileUploadExample;
 use App\Http\Controllers\HttpExample;
 use App\Http\Controllers\signupController;
 use App\Http\Controllers\HttpRequestController;
 use App\Http\Controllers\FlashController;
+// use App\Http\Controllers\JoinsExampleController;
 use App\Http\Controllers\LoginWithSession;
+use App\Http\Controllers\MemberController;
+use App\Http\Controllers\SaveDbExample;
+use App\Http\Controllers\UpdateMemberController;
 
+use App\Http\Controllers\QueryBuilderExampleController;
+use App\Http\Controllers\JoinsExampleController;
+use App\Http\Controllers\FormExampleController;
+use App\Http\Controllers\AccessorExampleController;
+use App\Http\Controllers\MutatorExampleController;
+use App\Http\Controllers\OneToOneRelationExample;
+
+use App\Http\Controllers\RouteBingingExample;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -114,3 +128,71 @@ Route::post("loginCheck",[LoginWithSession::class,"checkLogin"]);
 // route for fileupload example
 
 Route::get("FileUploadEx",[FileUploadExample::class,"index"]);
+Route::post("uploadFile",[FileUploadExample::class,"uploadFile"]);
+
+// route for ListController example
+
+Route::get("list",[MemberController::class,"index"]);
+
+Route::get("MembersList",[MemberController::class,"dataWithPagination"]);
+
+// foute for save data in db 
+
+
+Route::get("addUserData",[SaveDbExample::class,"index"]);
+
+Route::post("saveuserdata",[SaveDbExample::class,"saveuserdata"]);
+
+// route for delete oprations
+
+Route::get("deleteMemberList",[DeleteOperationController::class,"index"]);
+
+Route::get('deleteMember/{id}',[DeleteOperationController::class,"deleteMember"]);
+
+
+// route for update records 
+
+Route::get("updateMemberList",[UpdateMemberController::class,"index"]);
+Route::get("udpateMember/{id}",[UpdateMemberController::class,"editMember"]);
+Route::get("editMember/{id}",[UpdateMemberController::class,"editMember"]);
+Route::post("updateMemberData",[UpdateMemberController::class,"udpateMem"]);
+
+
+
+// Route for QueryBuilderExample 
+
+Route::get("queryBuilder",[QueryBuilderExampleController::class,"index"]);
+Route::post("addnewMember",[QueryBuilderExampleController::class,"addnewMember"]);
+Route::get("editQueryBuilderRecord/{id}",[QueryBuilderExampleController::class,"editQueryBuilderRecord"]);
+Route::post("memberInfoUpdate",[QueryBuilderExampleController::class,"memberInfoUpdate"]);
+Route::get("deleteQueryBuilderRecord/{id}",[QueryBuilderExampleController::class,"deleteQueryBuilderRecord"]);
+
+
+// routed for AggregatesExample 
+
+Route::get("aggregatesExample",[AggregatesExampleController::class,"index"]);
+
+
+// foutes for JoinsExample
+
+Route::get("joinsExample",[JoinsExampleController::class,"index"]);
+
+Route::get("FormExample",[FormExampleController::class,"index"]);
+
+
+// route for AccessorExampleController
+
+Route::get("accessorExample",[AccessorExampleController::class,"index"]);
+
+// route for mutator example 
+
+Route::get("mutator",[MutatorExampleController::class,"index"]);
+
+
+// routes for OneToOneRelationExample
+
+Route::get("oneTone",[OneToOneRelationExample::class,"index"]);
+
+// for route binding example
+
+Route::get("RouteBinding/{key}",[RouteBingingExample::class,"index"]);
