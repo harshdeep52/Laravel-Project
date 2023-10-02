@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\DummyApiExample;
 use App\Http\Controllers\DeviceController;
+use App\Http\Controllers\MultipleDbConnection;
 
 
 
@@ -24,7 +25,7 @@ use App\Http\Controllers\DeviceController;
 // });
 
 Route::group(['middleware' => 'auth:sanctum'], function(){
-    //All secure URL's
+    //All secure URL'sCould not open input file: artisan
     
     Route::get("getDeviceList",[DeviceController::class,"getDeviceList"]);
 
@@ -42,6 +43,10 @@ Route::group(['middleware' => 'auth:sanctum'], function(){
 
     // route for validation api 
     Route::get("validateApi",[DeviceController::class,"validateApi"]);
+
+    Route::get("productList",[MultipleDbConnection::class,"productList"]);
+
+    Route::post("uploadFiles",[DeviceController::class,"uploadFiles"]);
 });
 
     

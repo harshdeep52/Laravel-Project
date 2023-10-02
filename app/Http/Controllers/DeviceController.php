@@ -109,4 +109,10 @@ class DeviceController extends Controller
         
              return response($response, 201);
     }
+
+    function uploadFiles(Request $req){
+        // return  "uploadFiles";
+        // return $req->file('file')->store("apiDocs");
+        return ["result" => $req->file("file")->store("apiDocs")];
+    }
 }
